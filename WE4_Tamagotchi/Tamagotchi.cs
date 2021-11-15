@@ -20,6 +20,13 @@ namespace WE4_Tamagotchi
         private readonly Timer timer;
         private Levensstadium vorigLevensstatium;
 
+        // delegates
+        public delegate void LevensstadiumChanged(Levensstadium levensstadium);
+        public event LevensstadiumChanged LevensstadiumChangedEvent;
+
+        public delegate void ParameterChanged();
+        public event ParameterChanged ParameterChangedEvent;
+
         // Deel 1
         public string Naam { get; set; }
         public DateTime Geboortedatum { get; set; }
@@ -94,8 +101,45 @@ namespace WE4_Tamagotchi
             Honger = 4;
             Geluk = 4;
             Intelligentie = 4;
-
+            timer = new Timer(1000) { AutoReset = true, Enabled = true };
+            timer.Elapsed += IsLevensstadiumVeranderd;
+            timer.Elapsed += VeranderParameters;
+            timer.Start();
         }
 
+        private void IsLevensstadiumVeranderd(object sender, ElapsedEventArgs e)
+        {
+            vorigLevensstatium = Levensstadium;
+            if (vorigLevensstatium == Levensstadium.Dood)
+            {
+                timer.Stop();
+            }
+
+            if (LevensstadiumChangedEvent != null)
+            {
+                LevensstadiumChangedEvent(Levensstadium);
+            }
+        }
+
+        private void VeranderParameters(object sender, ElapsedEventArgs e)
+        {
+            int random = new Random().Next(0, 10);
+            if (random < 3)
+            {
+                Honger--;
+            }
+            if (random == 1)
+            {
+                Geluk--;
+            }
+            if (random == 3)
+            {
+                Intelligentie--;
+            }
+            if (ParameterChangedEvent != null)
+            {
+                ParameterChangedEvent();
+            }
+        }
     }
 }

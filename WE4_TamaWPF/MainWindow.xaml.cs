@@ -40,7 +40,10 @@ namespace WE4_TamaWPF
             tamagotchi = new Tamagotchi();
 
             UpdateGUI();
-            tamagotchi.Honger--;
+            tamagotchi.LevensstadiumChangedEvent += Tamagotchi_LevensstadiumChangedEvent;
+            tamagotchi.ParameterChangedEvent += Tamagotchi_ParameterChangedEvent;
+
+
 
         }
 
@@ -54,7 +57,7 @@ namespace WE4_TamaWPF
             lblGeluk.Content = tamagotchi.Geluk;
             lblHonger.Content = tamagotchi.Honger;
             lblIntelligentie.Content = tamagotchi.Intelligentie;
-            imgFoto.Source = eiImage;
+
         }
 
         private BitmapImage InitImage(byte[] imageData)
@@ -65,6 +68,36 @@ namespace WE4_TamaWPF
             image.EndInit();
 
             return image;
+        }
+
+        private void Tamagotchi_LevensstadiumChangedEvent(Levensstadium levensstadium)
+        {
+            var newImage = levensstadium switch
+            {
+                Levensstadium.Ei => eiImage,
+                Levensstadium.Kind => kindImage,
+                Levensstadium.Puber => puberImage,
+                Levensstadium.Volwassen => volwassenImage,
+                Levensstadium.Senior => volwassenImage,
+                Levensstadium.Dood => doodImage,
+                _ => volwassenImage,
+            };
+
+            Dispatcher.Invoke(() =>
+            {
+                imgTamagotchi.Source = newImage;
+                if (Levensstadium.Dood == levensstadium)
+                {
+                    btnEten.IsEnabled = false;
+                    btnLeren.IsEnabled = false;
+                    btnSpelen.IsEnabled = false;
+                }
+            });
+        }
+
+        private void Tamagotchi_ParameterChangedEvent()
+        {
+            Dispatcher.Invoke(() => UpdateGUI());
         }
     }
 }
