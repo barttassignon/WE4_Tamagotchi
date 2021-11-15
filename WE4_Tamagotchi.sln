@@ -3,9 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WE4_Tamagotchi", "WE4_Tamagotchi\WE4_Tamagotchi.csproj", "{9A7DC1A2-C580-4D09-8E30-DB7B61F63D5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WE4_Tamagotchi", "WE4_Tamagotchi\WE4_Tamagotchi.csproj", "{9A7DC1A2-C580-4D09-8E30-DB7B61F63D5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WE4_TamaWPF", "WE4_TamaWPF\WE4_TamaWPF.csproj", "{66B13389-0E7C-4951-AA21-D38E6AB25461}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WE4_TamaWPF", "WE4_TamaWPF\WE4_TamaWPF.csproj", "{66B13389-0E7C-4951-AA21-D38E6AB25461}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9A7DC1A2-C580-4D09-8E30-DB7B61F63D5A} = {9A7DC1A2-C580-4D09-8E30-DB7B61F63D5A}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3D9FE269-FEBE-4398-AF03-17D426E4A0E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

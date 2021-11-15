@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WE4_TamaWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="450" Width="400">
+    <Grid Margin="15">
+        <Button x:Name="btnSpelen" Content="Spelen" HorizontalAlignment="Left" Margin="61,354,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnLeren" Content="Leren" HorizontalAlignment="Left" Margin="270,354,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnEten" Content="Eten" HorizontalAlignment="Left" Margin="167,354,0,0" VerticalAlignment="Top" Width="75"/>
+        <Image x:Name="imgFoto" HorizontalAlignment="Left" Height="174" Margin="119,59,0,0" VerticalAlignment="Top" Width="172" Source="/tamagotchi.png"/>
+        <Label x:Name="lblNaam" Content="Naam" HorizontalAlignment="Left" Margin="61,34,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Geluk" Content="Geluk:" HorizontalAlignment="Left" Margin="61,249,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.703,8.333"/>
+        <Label x:Name="Honger" Content="Honger:" HorizontalAlignment="Left" Margin="61,279,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Intelligentie" Content="Intelligentie:" HorizontalAlignment="Left" Margin="61,309,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblLevensstadium" Content="Ei" HorizontalAlignment="Left" Margin="308,34,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblGeluk" Content="" HorizontalAlignment="Left" Margin="139,249,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.703,8.333"/>
+        <Label x:Name="lblHonger" Content="" HorizontalAlignment="Left" Margin="144,279,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblIntelligentie" Content="" HorizontalAlignment="Left" Margin="144,309,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
