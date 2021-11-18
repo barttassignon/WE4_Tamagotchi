@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="400">
     <Grid Margin="15">
-        <Button x:Name="btnSpelen" Content="Spelen" HorizontalAlignment="Left" Margin="61,354,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btnLeren" Content="Leren" HorizontalAlignment="Left" Margin="270,354,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btnEten" Content="Eten" HorizontalAlignment="Left" Margin="167,354,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnSpelen" Content="Spelen" HorizontalAlignment="Left" Margin="61,354,0,0" VerticalAlignment="Top" Width="75" Click="btnSpelen_Click"/>
+        <Button x:Name="btnLeren" Content="Leren" HorizontalAlignment="Left" Margin="270,354,0,0" VerticalAlignment="Top" Width="75" Click="btnLeren_Click"/>
+        <Button x:Name="btnEten" Content="Eten" HorizontalAlignment="Left" Margin="167,354,0,0" VerticalAlignment="Top" Width="75" Click="btnEten_Click"/>
         <Image x:Name="imgTamagotchi" HorizontalAlignment="Left" Height="174" Margin="119,59,0,0" VerticalAlignment="Top" Width="172" Source="/tamagotchi.png"/>
         <Label x:Name="lblNaam" Content="Naam" HorizontalAlignment="Left" Margin="61,34,0,0" VerticalAlignment="Top"/>
         <Label x:Name="Geluk" Content="Geluk:" HorizontalAlignment="Left" Margin="61,249,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.703,8.333"/>

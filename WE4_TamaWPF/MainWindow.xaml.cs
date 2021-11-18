@@ -33,18 +33,19 @@ namespace WE4_TamaWPF
             seniorImage = InitImage(Properties.Resources.tamagotchi_volwassen);
             doodImage = InitImage(Properties.Resources.tamagotchi_dood);
 
+            NameWindow nameWindow = new NameWindow();
 
-            // TODO: naam vragen aan speler
-            // nameWindow nameWindow = new NameWindow();
-
-            tamagotchi = new Tamagotchi();
-
-            UpdateGUI();
-            tamagotchi.LevensstadiumChangedEvent += Tamagotchi_LevensstadiumChangedEvent;
-            tamagotchi.ParameterChangedEvent += Tamagotchi_ParameterChangedEvent;
-
-
-
+            if (nameWindow.ShowDialog().GetValueOrDefault())
+            {
+                tamagotchi = new Tamagotchi(nameWindow.TamaName);
+                UpdateGUI();
+                tamagotchi.LevensstadiumChangedEvent += Tamagotchi_LevensstadiumChangedEvent;
+                tamagotchi.ParameterChangedEvent += Tamagotchi_ParameterChangedEvent;
+            }
+            else
+            {
+                Close();
+            }
         }
 
 
@@ -98,6 +99,24 @@ namespace WE4_TamaWPF
         private void Tamagotchi_ParameterChangedEvent()
         {
             Dispatcher.Invoke(() => UpdateGUI());
+        }
+
+        private void btnSpelen_Click(object sender, RoutedEventArgs e)
+        {
+            tamagotchi.Geluk++;
+            UpdateGUI();
+        }
+
+        private void btnEten_Click(object sender, RoutedEventArgs e)
+        {
+            tamagotchi.Honger++;
+            UpdateGUI();
+        }
+
+        private void btnLeren_Click(object sender, RoutedEventArgs e)
+        {
+            tamagotchi.Intelligentie++;
+            UpdateGUI();
         }
     }
 }

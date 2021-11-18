@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:WE4_TamaWPF"
         mc:Ignorable="d"
         Title="NameWindow" Height="450" Width="400">
-    <Grid Margin="15">
-        
+    <Grid Margin="15" Background="#FFB8DCE5">
+        <Label x:Name="lblQuestion" Content="Voeg een naam in&#xD;&#xA;voor je Tamagotchi:" HorizontalAlignment="Center" Margin="0,102,0,0" VerticalAlignment="Top" FontSize="24" FontFamily="Arial Black" Height="76" HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Center" Margin="0,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnOk" Content="OK" HorizontalAlignment="Center" Margin="0,266,0,0" VerticalAlignment="Top" Width="78" Height="35" FontSize="22" FontWeight="Bold" FontFamily="Algerian" Click="btnOk_Click"/>
+
     </Grid>
 </Window>

@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace WE4_TamaWPF
 {
@@ -17,9 +7,25 @@ namespace WE4_TamaWPF
     /// </summary>
     public partial class NameWindow : Window
     {
+        public string TamaName { get; set; }
+
         public NameWindow()
         {
             InitializeComponent();
+        }
+
+        private void btnOk_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtName.Text))
+            {
+                MessageBox.Show("Gelieve een naam in te voegen", "Ongeldige invoer.", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            }
+            else
+            {
+                TamaName = txtName.Text;
+                DialogResult = true;
+                Close();
+            }
         }
     }
 }

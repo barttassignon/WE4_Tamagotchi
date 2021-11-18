@@ -44,11 +44,11 @@ namespace WE4_Tamagotchi
                 return leeftijd.TotalMinutes switch
                 {
                     double minutes when (minutes <= 1) => Levensstadium.Ei,
-                    double minutes when (minutes <= 10) => Levensstadium.Baby,
-                    double minutes when (minutes <= 60) => Levensstadium.Kind,
-                    double minutes when (minutes <= 120) => Levensstadium.Puber,
-                    double minutes when (minutes <= 300) => Levensstadium.Volwassen,
-                    double minutes when (minutes <= 400) => Levensstadium.Senior,
+                    double minutes when (minutes <= 2) => Levensstadium.Baby,
+                    double minutes when (minutes <= 3) => Levensstadium.Kind,
+                    double minutes when (minutes <= 4) => Levensstadium.Puber,
+                    double minutes when (minutes <= 5) => Levensstadium.Volwassen,
+                    double minutes when (minutes <= 6) => Levensstadium.Senior,
                     _ => Levensstadium.Dood,
                 };
             }
